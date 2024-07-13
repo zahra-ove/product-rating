@@ -6,21 +6,11 @@ use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\ProductRating;
 use App\Models\User;
-use Database\Factories\ProductAttributeFactory;
 use Tests\TestCase;
 
-//use PHPUnit\Framework\TestCase;
 
 class ProductRatingTest extends TestCase
 {
-    /**
-     * A basic unit test example.
-     */
-    public function test_example(): void
-    {
-        $this->assertTrue(true);
-    }
-
 
     /** @test */
     public function it_can_list_all_ratings_for_a_specific_product()
