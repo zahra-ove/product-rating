@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "5da7f591-40dc-4c79-929f-7bf5ee1bf611",
+		"name": "arna-mehrpol",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11171093"
+	},
+	"item": [
+		{
+			"name": "Product Rating",
+			"item": [
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://product-rating.test/public/api/products-rating/26",
+							"protocol": "http",
+							"host": [
+								"product-rating",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products-rating",
+								"26"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://product-rating.test/public/api/products-rating/26/64",
+							"protocol": "http",
+							"host": [
+								"product-rating",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products-rating",
+								"26",
+								"64"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 26,\r\n    \"user_id\": 1,\r\n    \"product_attribute_id\": 4,\r\n    \"rate\": 57\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://product-rating.test/public/api/products-rating",
+							"protocol": "http",
+							"host": [
+								"product-rating",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products-rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product_id\": 26,\r\n    \"user_id\": 1,\r\n    \"product_attribute_id\": 4,\r\n    \"rate\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://product-rating.test/public/api/products-rating",
+							"protocol": "http",
+							"host": [
+								"product-rating",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products-rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://product-rating.test/public/api/products-rating/175",
+							"protocol": "http",
+							"host": [
+								"product-rating",
+								"test"
+							],
+							"path": [
+								"public",
+								"api",
+								"products-rating",
+								"175"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
