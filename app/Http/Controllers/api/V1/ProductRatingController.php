@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api\V1;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductRatingResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
@@ -9,6 +10,7 @@ use App\Models\ProductRating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
+
 
 class ProductRatingController extends Controller
 {
