@@ -20,10 +20,10 @@ class ProductRatingFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => fake()->numberBetween(1, 50),
+            'product_id'           => fake()->numberBetween(1, 50),
             'product_attribute_id' => fake()->numberBetween(1, 100),
-            'user_id' => 1,
-            'rate' => fake()->randomFloat(2, 0, 100)
+            'user_id'              => 1,
+            'rate'                 => fake()->randomFloat(2, 0, 100)
         ];
     }
 }
