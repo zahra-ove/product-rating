@@ -26,17 +26,19 @@ create table product_attributes(
 
 create table product_ratings(
     id int not null auto_increment primary key,
+    product_id int,
     product_attribute_id int,
     user_id int,
     rate float default 0,
     created_at timestamp NULL DEFAULT NULL,
     updated_at timestamp NULL DEFAULT NULL,
 
-    KEY `product_attribute_id_indx` (`product_attribute_id`),
+    KEY `productrating_productattribute_indx` (`product_attribute_id`),
+    KEY `productrating_product_indx` (`product_id`),
     KEY `user_id_indx` (`user_id`),
 
-    CONSTRAINT productuser_products_fk FOREIGN KEY (product_attribute_id) REFERENCES product_attributes(id)
-    -- CONSTRAINT productuser_users_fk FOREIGN KEY (user_id) REFERENCES users(id)
+    CONSTRAINT productrating_products_fk FOREIGN KEY (product_id) REFERENCES products(id),
+    CONSTRAINT productrating_productsattributes_fk FOREIGN KEY (product_attribute_id) REFERENCES product_attributes(id)
 );
 
 
