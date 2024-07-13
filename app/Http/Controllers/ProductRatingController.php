@@ -54,7 +54,7 @@ class ProductRatingController extends Controller
         return response()->json([
             'messsage' => 'success',
             'data'     => $result
-        ], Response::HTTP_OK);
+        ], Response::HTTP_CREATED);
     }
 
     /**
@@ -145,7 +145,7 @@ class ProductRatingController extends Controller
         // if delete was successful
         return response()->json([
             'messsage' => 'success',
-        ], Response::HTTP_OK);
+        ], Response::HTTP_NO_CONTENT);
 
     }
 }
