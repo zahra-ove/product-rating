@@ -38,12 +38,13 @@ create table product_ratings(
     KEY `user_id_indx` (`user_id`),
 
     CONSTRAINT productrating_products_fk FOREIGN KEY (product_id) REFERENCES products(id),
-    CONSTRAINT productrating_productsattributes_fk FOREIGN KEY (product_attribute_id) REFERENCES product_attributes(id)
+    CONSTRAINT productrating_productsattributes_fk FOREIGN KEY (product_attribute_id) REFERENCES product_attributes(id),
+    CONSTRAINT productrating_users_fk FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 
 CREATE TABLE `users` (
-    `id` int unsigned NOT NULL AUTO_INCREMENT,
+    `id` int NOT NULL AUTO_INCREMENT,
     `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
     `email_verified_at` timestamp NULL DEFAULT NULL,
