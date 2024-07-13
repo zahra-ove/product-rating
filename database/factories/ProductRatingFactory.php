@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Product;
 use App\Models\ProductAttribute;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -19,8 +20,9 @@ class ProductRatingFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_attribute_id' => ProductAttribute::factory(),
-            'user_id' => User::factory(),
+            'product_id' => fake()->numberBetween(1, 50),
+            'product_attribute_id' => fake()->numberBetween(1, 100),
+            'user_id' => 1,
             'rate' => fake()->randomFloat(2, 0, 100)
         ];
     }

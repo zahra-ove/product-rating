@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function product_ratings()
     {
-        return $this->hasMany(ProductRating::class);
+        return $this->hasMany(ProductRating::class, foreignKey: 'user_id');
     }
 }

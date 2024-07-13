@@ -8,14 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class ProductRating extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     public function attribute()
     {
-        return $this->belongsTo(ProductAttribute::class);
+        return $this->belongsTo(ProductAttribute::class, 'product_attribute_id');
     }
 
-    public function voter()
+    public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }

@@ -18,7 +18,7 @@ class ProductAttributeFactory extends Factory
     public function definition(): array
     {
         return [
-            'product_id' => Product::factory(),
+            'product_id' => fake()->numberBetween(1, 50),
             'attribute' => fake()->word
         ];
     }
