@@ -41,7 +41,7 @@ class ProductRatingController extends Controller
         // if validation failed
         if ($validator->fails()) {
             return response()->json([
-                'messsage' => 'error',
+                'message' => 'error',
                 'errors' => $validator->errors()],
                 Response::HTTP_UNPROCESSABLE_ENTITY);
         }
@@ -52,8 +52,8 @@ class ProductRatingController extends Controller
         $result = ProductRating::create($validatedData);
 
         return response()->json([
-            'messsage' => 'success',
-            'data'     => $result
+            'message' => 'success',
+            'data'     => new ProductRatingResource($result)
         ], Response::HTTP_CREATED);
     }
 
@@ -94,7 +94,7 @@ class ProductRatingController extends Controller
         // if validation failed
         if ($validator->fails()) {
             return response()->json([
-                'messsage' => 'error',
+                'message' => 'error',
                 'errors' => $validator->errors()],
                 Response::HTTP_UNPROCESSABLE_ENTITY);
         }
@@ -110,14 +110,14 @@ class ProductRatingController extends Controller
         }
 
 
-
+        // update rating
         ProductRating::where(['product_id'=>$validatedData['product_id'],
                                 'product_attribute_id'=>$validatedData['product_attribute_id'],
                                 'user_id'=>$validatedData['user_id']])
                                 ->update(['rate'=> $validatedData['rate']]);
 
         return response()->json([
-            'messsage' => 'success',
+            'message' => 'success',
         ], Response::HTTP_OK);
     }
 
@@ -129,7 +129,7 @@ class ProductRatingController extends Controller
         // check if record exists
         if(! ProductRating::where('id', $id)->exists($id)) {
             return response()->json([
-                'messsage' => 'failed',
+                'message' => 'failed',
             ], Response::HTTP_NOT_FOUND);
         }
 
@@ -138,14 +138,11 @@ class ProductRatingController extends Controller
         // if not deleted
         if(! $result) {
             return response()->json([
-                'messsage' => 'failed',
+                'message' => 'failed',
             ], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
         // if delete was successful
-        return response()->json([
-            'messsage' => 'success',
-        ], Response::HTTP_NO_CONTENT);
-
+        return response()->noContent();
     }
 }
