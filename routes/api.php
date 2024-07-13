@@ -10,9 +10,10 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
-
+// product
 Route::apiResource('products', ProductController::class);
-//Route::apiResource('products-rating', ProductRatingController::class);
+
+//product-rating
 Route::get('products-rating/{product_id}/{product_attribute_id}', [ProductRatingController::class, 'show']);
 Route::get('products-rating/{product_id}', [ProductRatingController::class, 'index']);
 Route::post('products-rating', [ProductRatingController::class, 'store']);
