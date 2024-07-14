@@ -22,3 +22,9 @@ Route::prefix('v1')->group(function () {
     Route::delete('products-rating/{product_rating_id}', [ProductRatingController::class, 'destroy'])->name('products-rating.destroy');
 });
 
+
+// fallback route
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+});
